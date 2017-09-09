@@ -1,0 +1,101 @@
+<% include head %>
+
+
+  <body>
+    <div class="container text-center" style="font-size:1em">
+      <h1><%= title %></h1>
+      <table class="table table-hover table-condensed">
+        <tr class="active">
+          <th class="text-center col-md-2 col-md-2 col-lg-2">Name</th>
+          <th class="text-center col-md-2 col-md-2 col-lg-2">Age</th>
+          <th class="text-center col-md-2 col-md-2 col-lg-2">QQ</th>
+          <th class="text-center col-md-2 col-md-2 col-lg-2">Email</th>
+          <th class="text-center col-md-2 col-md-2 col-lg-2">City</th>
+          <th class="text-center col-md-2 col-md-2 col-lg-2">操作</th>
+        </tr>
+        <% infos.forEach(function(e){ %>
+          <tr>
+
+            <td class="col-md-2 col-xs-2 col-lg-2">
+              <%= e.user %>
+            </td>
+
+            <td class="col-md-2 col-xs-2 col-lg-2">
+              <%= e.Age %>
+            </td>
+
+            <td class="col-md-2 col-xs-2 col-lg-2">
+              <%= e.QQ %>
+            </td>
+
+            <td class="col-md-2 col-xs-2 col-lg-2">
+              <%= e.Email %>
+            </td>
+
+            <td class="col-md-2 col-xs-2 col-lg-2">
+              <%= e.Home %>
+            </td>
+
+            <td class="col-md-2 col-xs-2 col-lg-2" style="min-width:115px;">
+              <form action="/update" method="get" style="display:inline-block;">
+                <input type="hidden" name="id" value=<%= e.id %> >
+                <button style="submit">修改</button>
+              </form>
+              <form action="/show" method="post" style="display:inline-block;">
+                <input type="hidden" name="id" value=<%= e.id %> >
+                <button type="submit">删除</button>
+              </form>
+            </td>
+
+          </tr>
+          <% }); %>
+
+      </table>
+    </div>
+      <script>
+         var socket = io();
+         socket.on('msg', function(e){
+           console.log(e);
+             $('.active').after('<tr>'
+            +'<td class="col-md-2 col-xs-2 col-lg-2">'
+                  +  e.user +
+                 '</td>'+
+
+                 '<td class="col-md-2 col-xs-2 col-lg-2">'+
+                    e.Age +
+                ' </td>'+
+
+                ' <td class="col-md-2 col-xs-2 col-lg-2">'+
+                    e.QQ +
+                 '</td>'+
+
+
+                 '<td class="col-md-2 col-xs-2 col-lg-2">'+
+                    e.Email +
+                ' </td>'+
+
+                 '<td class="col-md-2 col-xs-2 col-lg-2">'+
+                    e.Home +
+                ' </td>'+
+
+                 '<td class="col-md-2 col-xs-2 col-lg-2" style="min-width:115px;">'+
+                  ' <form action="/update" method="get" style="display:inline-block;">'+
+                     '<input type="hidden" name="id" value='+
+                     e.id  +
+                     '>'+
+                  '<button style="submit">修改</button>'+
+                  '</form>'+
+                  ' <form action="/show" method="post" style="display:inline-block;">'+
+                     '<input type="hidden" name="id" value='+
+                     e.id  +
+                     '>'+
+                     '<button type="submit">删除</button>'+
+                   '</form>'+
+                 '</td>'+
+               '</tr>');
+         });
+      </script>
+
+  </body>
+
+  </html>
