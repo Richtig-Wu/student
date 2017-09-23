@@ -3,32 +3,33 @@
   <% include head %>
 
     <body>
-      <form action="/update" method="post" class="container text-center" style="max-width:600px">
-        <h1><%= title %></h1>
-        <div class="input-group">
-          <span class="input-group-addon" id="basic-addon1">Name</span>
-          <input type="text" name="user" class="form-control" placeholder="Name" required aria-describedby="basic-addon1" value=<%= docs.user %> >
-        </div><br><br>
-        <div class="input-group">
-          <span class="input-group-addon" id="basic-addon1">&nbsp;Age&nbsp;&nbsp;</span>
-          <input type="number" name="Age" min="1" max="110" class="form-control" placeholder="Age" required aria-describedby="basic-addon1" value=<%= docs.Age %>>
-        </div><br><br>
-        <div class="input-group">
-          <span class="input-group-addon" id="basic-addon1">Email</span>
-          <input type="email" name="Email" class="form-control" placeholder="Email" required aria-describedby="basic-addon1" value=<%= docs.Email %>>
-        </div><br><br>
-        <div class="input-group">
-          <span class="input-group-addon" id="basic-addon1">&nbsp;&nbsp;QQ&nbsp;&nbsp;</span>
-          <input type="number" name="QQ" min="0" class="form-control" placeholder="QQ" required aria-describedby="basic-addon1" value=<%= docs.QQ %>>
-        </div><br><br>
-        <div class="input-group">
-          <span class="input-group-addon" id="basic-addon1">&nbsp;Ctiy&nbsp;&nbsp;</span>
-          <input type="text" name="Home" class="form-control" placeholder="City" required aria-describedby="basic-addon1" value=<%= docs.Home %>>
-        </div><br><br>
+        <div class="update">
+          <form action="/update" method="post" class="container text-center" style="max-width:600px">
+            <h1><%= title %></h1>
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1">Name</span>
+              <input type="text" name="user" class="form-control" placeholder="Name" required aria-describedby="basic-addon1" value=<%= docs.user %> >
+            </div><br><br>
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1">&nbsp;Age&nbsp;&nbsp;</span>
+              <input type="number" name="Age" min="1" max="110" class="form-control" placeholder="Age" required aria-describedby="basic-addon1" value=<%= docs.Age %>>
+            </div><br><br>
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1">Email</span>
+              <input type="email" name="Email" class="form-control" placeholder="Email" required aria-describedby="basic-addon1" value=<%= docs.Email %>>
+            </div><br><br>
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1">&nbsp;&nbsp;QQ&nbsp;&nbsp;</span>
+              <input type="number" name="QQ" min="0" class="form-control" placeholder="QQ" required aria-describedby="basic-addon1" value=<%= docs.QQ %>>
+            </div><br><br>
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1">&nbsp;Ctiy&nbsp;&nbsp;</span>
+              <input type="text" name="Home" class="form-control" placeholder="City" required aria-describedby="basic-addon1" value=<%= docs.Home %>>
+            </div><br><br>
+            <button name="id" style="width:100%;max-width:600px" value=<%= docs.id %>>提交</button>
+          </form>
 
-        <button name="id" style="width:100%;max-width:600px" value=<%= docs.id %>>提交</button>
-      </form>
-
+        </div>
     </body>
 
 </html>
