@@ -26,6 +26,12 @@ a {
   background: rgb(114, 215, 206);
 }
 
+
+.myemail{
+  word-break:break-all;
+}
+
+
 .update{
   padding-top: 10%;
   width: 100%;
