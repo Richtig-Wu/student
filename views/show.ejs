@@ -6,9 +6,10 @@
     <div class="container text-center" style="font-size:1em">
       <div>
         <a href="/" style="float:right;">返回首页</a>
-        <h1 style="font-size:3em"><%= title %></h1>
+        <h1 style="font-size:2em"><%= title %></h1>
       </div>
-      <table class="table table-hover table-condensed">
+
+      <table class="table table-hover table-condensed mytable">
         <tr class="active">
           <th class="text-center col-md-2 col-md-2 col-lg-2 col-xs-1">Name</th>
           <th class="text-center col-md-2 col-md-2 col-lg-2 col-xs-1">Age</th>
@@ -20,27 +21,27 @@
         <% infos.forEach(function(e){ %>
           <tr>
 
-            <td class="col-md-2 col-xs-2 col-lg-2 col-xs-2">
+            <td class="col-md-2 col-xs-2 col-lg-2 col-xs-1">
               <%= e.user %>
             </td>
 
-            <td class="col-md-2 col-xs-2 col-lg-2 col-xs-2">
+            <td class="col-md-2 col-xs-2 col-lg-2 col-xs-1">
               <%= e.Age %>
             </td>
 
-            <td class="col-md-2 col-xs-2 col-lg-2 col-xs-2">
+            <td class="col-md-2 col-xs-2 col-lg-2 col-xs-1">
               <%= e.QQ %>
             </td>
 
-            <td class="col-md-2 col-xs-2 col-lg-2 col-xs-2 myemail"  >
+            <td class="col-md-2 col-xs-2 col-lg-2 col-xs-1 myemail"  >
               <%= e.Email %>
             </td>
 
-            <td class="col-md-2 col-xs-2 col-lg-2 col-xs-2">
+            <td class="col-md-2 col-xs-2 col-lg-2 col-xs-1">
               <%= e.Home %>
             </td>
 
-            <td class="col-md-2 col-xs-2 col-lg-2 col-xs-2" >
+            <td class="col-md-2 col-xs-2 col-lg-2 col-xs-2" style="min-width:55px;" >
               <form action="/update" method="get" style="display:inline-block;" >
                 <input type="hidden" name="id" value=<%= e.id %> >
                 <button style="submit">修改</button>
@@ -55,6 +56,8 @@
           <% }); %>
 
       </table>
+
+
     </div>
   </div>
       <script>
